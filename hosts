@@ -18,8 +18,9 @@
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 
 [dev]
-192.168.0.5
-
+#192.168.0.5
+192.168.0.2
+192.168.0.6
 #[webservers]
 #alpha.example.org
 #beta.example.org
