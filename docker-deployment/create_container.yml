@@ -1,0 +1,14 @@
+---
+ - name: create Container
+   hosts: dev
+   become: yes
+   tasks:
+   - name: web container
+     docker_container:
+       name: web
+       image: mywebimage
+       state: started
+       ports: 
+       - "8080:80"
+       tty: true
+       detach: true
