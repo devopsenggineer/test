@@ -1,0 +1,27 @@
+---
+- name: Install docker
+  gather_facts: No
+  hosts: dev
+  become: yes
+
+  tasks:
+#    - name: Install device-mapper-persistent-data
+#      yum:
+#        name: device-mapper-persistent-data
+#        state: latest
+
+#    - name: Install pip
+#      yum:
+#        name: python-pip
+#        state: latest
+    - name: install docker-py with pip
+      become: true
+      pip:  
+        name: docker-py
+        state: latest
+
+#      with_item:
+#        - docker-py
+#        - six 
+
+
