@@ -1,0 +1,21 @@
+#!/bin/bash
+# Author: Syed Imran
+# Date Created: 05/20/2020
+# Description: This script will helps understand  in shell-script
+# Date Modified: 05/20/2020
+echo Little Demo on removing docker images older 30 days
+
+sudo su << HERE
+pwd
+ls
+docker images
+sleep 10
+docker image prune -a -f --filter "until=$(date +'%Y-%m-%dT%H:%M:%S' --date='-30 days')"
+sleep 10
+
+docker images
+HERE
+
+
+
+echo End of Script
